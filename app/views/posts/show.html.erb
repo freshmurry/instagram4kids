@@ -12,13 +12,19 @@
         <% end %>
       </div>
       <%= link_to @post.user.username, user_path(@post.user), class: 'username' %>
+      <% if @post == current_user %>
+        <%= link_to post_path(post), method: :delete, class: "ml-auto delete-post-icon mx-0 my-auto" do %>
+          <i class="fa fa-trash" aria-hidden="true"></i>
+        <% end %>
+      <% end %>
     </div>
     <div class="description">
       <%= render partial: "description", locals: {post: @post} %>
     </div>
     <div class="delete">
       <% if current_user.posts.exists?(@post.id) %>
-        <%= link_to 'Remove', post_path(@post), method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= link_to 'Delete', post_path(@post), method: :delete, data: { confirm: 'Are you sure?' } %>
+        <i class="fa fa-trash" aria-hidden="true"></i>      
       <% end %>
     </div>
   </div>

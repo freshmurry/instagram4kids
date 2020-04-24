@@ -4,7 +4,7 @@
       <div class="wrapper">
         <% if @user.avatar.attached? %>
           <%= image_tag @user.avatar %>
-        <%end %>
+        <% end %>
       </div>
     </div>
     <div class="col-md-8 basic-info">
@@ -22,28 +22,19 @@
         <li><span>345</span> following</li>
       </ul>
       <h2 class="name"><%=@user.name %></h2>
+      <%= @user.bio %>
       <%=link_to @user.website, @user.website, class: 'website' %>
     </div>
   </div>
-
-  <div class="user-tabs">
-    <a class="tab active" href="">
-      <i class="fa fa-th"></i>
-      POSTS
-    </a>
-    <a class="tab" href="">
-      <i class="fa fa-tv"></i>
-      IGTV
-    </a>
-    <a class="tab" href="">
-      <i class="fa fa-bookmark"></i>
-      SAVED
-    </a>
-    <a class="tab" href="">
-      <i class="fa fa-tag"></i>
-      TAGGED
-    </a>
-  </div>
+  
+  <nav>
+    <div class="nav nav-tabs d-flex justify-content-center" id="nav-tab" role="tablist">
+      <a class="nav-item nav-link active" id="nav-posts-tab" data-toggle="tab" href="#nav-posts" role="tab" aria-controls="nav-posts" aria-selected="true"><i class="fa fa-th"></i> POSTS</a>
+      <a class="nav-item nav-link" id="nav-saved-tab" data-toggle="tab" href="#nav-saved" role="tab" aria-controls="nav-saved" aria-selected="false"><i class="fa fa-tv"></i> IGTV</a>
+      <a class="nav-item nav-link" id="nav-saved-tab" data-toggle="tab" href="#nav-saved" role="tab" aria-controls="nav-saved" aria-selected="false"><i class="fa fa-bookmark"></i> SAVED</a>
+      <a class="nav-item nav-link" id="nav-saved-tab" data-toggle="tab" href="#nav-saved" role="tab" aria-controls="nav-saved" aria-selected="false"><i class="fa fa-bookmark"></i> TAGGED</a>
+    </div>  
+  </nav>
 
   <div class="user-images">
     <% @posts.each do |post|%>

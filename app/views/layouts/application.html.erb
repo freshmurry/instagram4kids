@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Instagram</title>
+    <title>Instagram4Kids</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -14,8 +14,8 @@
       <div class="container">
         <div class="logo">
           <a class="navbar-brand" href="<%= root_path %>">
-            <%= fa_stacked_icon "camera inverse", base: "circle"%>
-            Instagram
+            <%= link_to image_tag("gametimelj.jpg", alt: "logo"), '/', class: 'navbar-brand' %>
+            <%= link_to "Instagram4Kids", '#', id: "prov", class: 'navbar-brand' %>
           </a>
         </div>
         <div class="m-auto">
@@ -48,20 +48,19 @@
     <footer class="container footer">
       <nav class="navbar d-flex">
         <ul>
-          <li>ABOUT US
-          </li>
-          <li>SUPPORT</li>
-          <li>PRESS</li>
-          <li>API</li>
-          <li>JOBS</li>
-          <li>PRIVACY</li>
-          <li>TERMS</li>
-          <li>DIRECTORY</li>
-          <li>PROFILES</li>
-          <li>HASHTAGS</li>
-          <li>LANGUAGE</li>
+          <li class="list-inline-item"><%= link_to "ABOUT", about_path, style: "text-decoration: none;" %></li>
+          <li class="list-inline-item"><%= link_to "SUPPORT", support_path, style: "text-decoration: none;" %></li>
+          <li class="list-inline-item"><%= link_to "PRESS", press_path, style: "text-decoration: none;" %></li>
+          <li class="list-inline-item"><%= link_to "BLOG", blog_path, style: "text-decoration: none;" %></li>
+          <li class="list-inline-item"><%= link_to "CARRERS", careers_path, style: "text-decoration: none;" %></li>
+          <li class="list-inline-item"><%= link_to "PRIVACY", privacy_path, style: "text-decoration: none;" %></li>
+          <li class="list-inline-item"><%= link_to "TERMS", terms_path, style: "text-decoration: none;" %></li>
+          <li class="list-inline-item"><%= link_to "FAQ", faq_path, style: "text-decoration: none;" %></li>
+          <li><a href="facebook.com"><i class="fa fa-facebook fa-2x fa-fw"></i></a></li>
+          <li><a href="https://twitter.com"><i class="fa fa-twitter-square fa-2x fa-fw"></i></a></li>
+					<li><a href="https://www.instagram.com/freshmurry/" target="_blank"><i class="fa fa-instagram fa-2x fa-fw"></i></a></li>	
         </ul>
-        <p> © 2018 INSTAGRAM </p>
+        <p> © 2018 Instagram4Kids </p>
       </nav>
     </footer>
   </body>
