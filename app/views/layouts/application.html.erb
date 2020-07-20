@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Instagram4Kids</title>
+    <title>GameTimeLJ</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href='https://fonts.googleapis.com/css?family=Faster+One:800' rel='stylesheet' type='text/css'>
+    
   </head>
 
   <body>
@@ -15,7 +17,7 @@
         <div class="logo">
           <a class="navbar-brand" href="<%= root_path %>">
             <%= link_to image_tag("gametimelj.jpg", alt: "logo"), '/', class: 'navbar-brand' %>
-            <%= link_to "Instagram4Kids", '#', id: "prov", class: 'navbar-brand' %>
+            <%= link_to "GameTimeLJ", root_path, id: "prov", class: 'navbar-brand', style: "font-family: Faster One, cursive; font-size: 2em; color: #273c75" %>
           </a>
         </div>
         <div class="m-auto">
@@ -24,8 +26,6 @@
           <% end %>
         </div>
         <div class="user-section">
-          <a><i class="fa fa-compass"></i></a>
-          <a><i class="fa fa-heart"></i></a>
           <% if user_signed_in? %>
             <a href="<%= user_path(current_user)%>">
               <i class="fa fa-user"></i>

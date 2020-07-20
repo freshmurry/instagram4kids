@@ -18,24 +18,25 @@
       </div>
       <ul class="posts">
         <li><span><%= @posts.count %></span> posts</li>
-        <li><span>195</span> followers</li>
-        <li><span>345</span> following</li>
+        <!--<li><span>195</span> followers</li>-->
+        <!--<li><span>345</span> following</li>-->
       </ul>
       <h2 class="name"><%=@user.name %></h2>
       <%= @user.bio %>
       <%=link_to @user.website, @user.website, class: 'website' %>
     </div>
   </div>
-  
+  <div class="profile-tab">
+    <% if @user == current_user %>
   <nav>
     <div class="nav nav-tabs d-flex justify-content-center" id="nav-tab" role="tablist">
       <a class="nav-item nav-link active" id="nav-posts-tab" data-toggle="tab" href="#nav-posts" role="tab" aria-controls="nav-posts" aria-selected="true"><i class="fa fa-th"></i> POSTS</a>
-      <a class="nav-item nav-link" id="nav-saved-tab" data-toggle="tab" href="#nav-saved" role="tab" aria-controls="nav-saved" aria-selected="false"><i class="fa fa-tv"></i> IGTV</a>
-      <a class="nav-item nav-link" id="nav-saved-tab" data-toggle="tab" href="#nav-saved" role="tab" aria-controls="nav-saved" aria-selected="false"><i class="fa fa-bookmark"></i> SAVED</a>
-      <a class="nav-item nav-link" id="nav-saved-tab" data-toggle="tab" href="#nav-saved" role="tab" aria-controls="nav-saved" aria-selected="false"><i class="fa fa-bookmark"></i> TAGGED</a>
+      <!--<a class="nav-item nav-link" id="nav-saved-tab" data-toggle="tab" href="#nav-saved" role="tab" aria-controls="nav-saved" aria-selected="false"><i class="fa fa-tv"></i> IGTV</a>-->
+      <!--<a class="nav-item nav-link" id="nav-saved-tab" data-toggle="tab" href="#nav-saved" role="tab" aria-controls="nav-saved" aria-selected="false"><i class="fa fa-bookmark"></i> SAVED</a>-->
+      <!--<a class="nav-item nav-link" id="nav-saved-tab" data-toggle="tab" href="#nav-saved" role="tab" aria-controls="nav-saved" aria-selected="false"><i class="fa fa-bookmark"></i> TAGGED</a>-->
     </div>  
   </nav>
-
+  <% end %>
   <div class="user-images">
     <% @posts.each do |post|%>
       <div class="wrapper">
